@@ -220,7 +220,7 @@ ready?
 ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
 ./playervsplayercoin-cli startmasternode alias false <mymnalias>
 ```
-where <mymnalias> is the name of your masternode alias (without brackets).  In our example above, this was MN1
+where \<mymnalias\> is the name of your masternode alias (without brackets).  In our example above, this was MN1
 The following should appear:
 ```
 “overall” : “Successfully started 1 masternodes, failed to start 0, total 1”,
