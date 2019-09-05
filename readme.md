@@ -4,7 +4,7 @@
 This guide is for a single masternode, (tested) on an Ubuntu 18.04 64bit server (VPS) running headless (no GUI desktop) and will be controlled from the wallet on your local computer (Control wallet). The wallet on the the VPS will be referred to as the Remote wallet.
 You will need your server details for progressing through this guide.
 
-Note: There are many different ways to set up masternodes, and these instructions may differ from what Ed or others have posted on the PvPCoin discord server.  I have tested these instructions and they worked for me.  Any questions, you can call me out on discord (@go140point6#7708).
+Note: There are many different ways to set up masternodes, but this method is considered cold-staking (remote wallet has zero balance becuase the pledge, in this case 888 pvpcoin, stays on the control wallet) as opposed to hot-staking (remote wallet has the 888 pvpcoin).  Cold-staking a masternode is generally considered more secure.  These instructions may differ from what Ed or others have posted on the PvPCoin discord server but I have tested these instructions and they worked for me.  Any questions, you can call me out on discord (@go140point6#7708).
 
 First the basic requirements:
 - 888 pvpcoin (it is recommended you have about 950 to conver any transaction costs).  This is in your control wallet.
