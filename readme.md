@@ -28,7 +28,7 @@ A note about encryption: It is ALWAYS a good idea to encrypt a wallet that has f
 ```
 ./playervsplayercoin-cli encryptwallet <mylongrandompassphrase>
 ```
-another note... special characters are allowed in the passphrase, but must be escaped with a backslash (\).  I recommend you avoid the exlaimation point (!), it is a pain to use on the -cli and I always have issues trying to escape it.  Here's an example using a strong password with escaped characters:
+another note... special characters are allowed in the passphrase, but must be escaped with a backslash (\\).  I recommend you avoid the exlaimation point (!), it is a pain to use on the -cli and I always have issues trying to escape it.  Here's an example using a strong password with escaped characters:
 ```
 ./playervsplayercoin-cli encryptwallet kj\$d4f9\#kdw8
 ```
