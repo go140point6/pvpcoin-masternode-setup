@@ -23,7 +23,7 @@ I am writing these instuctions using playervsplayercoin-cli, not the -qt (GUI) w
 
 Since you probably have the 888 pvpcoin needed to setup and run a masternode, it is assumed you already have a running control wallet on either Linux or Windows.  Remember, if you have a running -qt, just use these commands in the Debug console, except where noted.
 
-A note about encryption: It is ALWAYS a good idea to encrypt a wallet that has funds.  Please be sure to encrypt your wallet and keep the password in (multiple) safe locations.  No password, no access to funds.  And if you have backup copies of your wallet before it was encyrpted, get rid of them!  Someone with access to those unecrypted wallets wouldn't need your passphrase.  You decide how to proceed, this document assumes you have encrypted your control wallet (no need to encrypt your remote wallet (masternode), as it contains no funds.
+A note about encryption: It is ALWAYS a good idea to encrypt a wallet that has funds.  Please be sure to encrypt your wallet and keep the password in (multiple) safe locations.  No password, no access to funds.  And if you have backup copies of your wallet before it was encyrpted, get rid of them!  Someone with access to those unecrypted wallets wouldn't need your passphrase.  You decide how to proceed, this document assumes you have encrypted your control wallet... no need to encrypt your remote wallet (masternode), as it contains no funds.
 
 ```
 ./playervsplayercoin-cli encryptwallet <mylongrandompassphrase>
