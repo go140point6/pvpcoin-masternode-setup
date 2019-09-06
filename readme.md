@@ -8,7 +8,7 @@ Note: There are many different ways to set up masternodes, but this method is co
 
 First the basic requirements:
 - 888 pvpcoin (it is recommended you have about 950 to conver any transaction costs).  This is in your control wallet.
-- A main computer (Your everyday computer or *soon* a Pi) – This will run the control wallet, hold your collateral 888 pvpcoin and can be turned on and off without affecting the masternode.
+- A main computer (Your everyday computer or even a Pi) – This will run the control wallet, hold your collateral 888 pvpcoin and can be turned on and off without affecting the masternode.
   - pick a suitable version for your OS
 - Masternode Server (VPS or local – The computer that will be on 24/7)  
   - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F).  If that link is expired, please try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
@@ -124,7 +124,7 @@ Example: MN1 31.14.135.27:4568 892WPpkqbr7sr6Si4fdsfssjjapuFzAXwETCrpPJubnrmU6aK
 ## VPS Remote wallet install
 Connect to your vps or the local server that will be on 24/7. This is already assumed to be running with your OS of choice, and is out of scope of this document. 
  
-1. Install the latest version of the PvPCoin wallet onto your masternode. The lastest "official" version can be found here: [PvPCoin releases](https://github.com/MPAds/PvPCoin/releases) but as of this writing those Linux binaries require many dependencies to get running (Windows may be OK, I didn't check).  I have compiled the Linux binaries statically, so they run on a clean Linux system (tested Ubuntu 18.04 and Lubuntu 19.04). You can download my binaries or follow my instructions to compile your own copy here: [pvpcoin-releases] (https://github.com/go140point6/pvpcoin-build/releases). If when reading this my version number is still 1.0.0, ignore that... I didn't pay attention to Ed's versioning when I posted it (as of this writing, the official build is v0.12.3.3).
+1. Install the latest version of the PvPCoin wallet onto your masternode. The lastest "official" version can be found here: [PvPCoin releases](https://github.com/MPAds/PvPCoin/releases) but as of this writing those Linux binaries require many dependencies to get running (Windows may be OK, I didn't check).  I have compiled the Linux and Arm (Pi) binaries statically, so they run on a clean system (tested Ubuntu 18.04, Lubuntu 19.04 and Rasbian Buster). You can download my binaries or follow my instructions to compile your own copies here: [pvpcoin-releases] (https://github.com/go140point6/pvpcoin-build/releases).
  - Go to your home directory:
  ```
  cd ~ && mkdir -p ~/src && cd ~/src
