@@ -25,7 +25,7 @@ Since you probably have the 888 pvpcoin needed to setup and run a masternode, it
 
 A note about encryption: It is ALWAYS a good idea to encrypt a wallet that has funds.  Please be sure to encrypt your wallet and keep the password in (multiple) safe locations.  No password, no access to funds.  And if you have backup copies of your wallet before it was encyrpted, get rid of them!  Someone with access to those unecrypted wallets wouldn't need your passphrase.  You decide how to proceed, this document assumes you have encrypted your control wallet... no need to encrypt your remote wallet (masternode), as it contains no funds.
 
-Note the space in front of the following command.  That is very important because your shell likely keeps a history of your commands.  Type ```history``` to see what I'm talking about.  This is a very useful tool but doesn't work well with cleartext passwords.  So place a space before your command and it will not be recorded in history.  If you forget, simply type ```history``` and figure find the line you want to remove, then ```history -d <linenumber>``` to remove that line.
+Hard to see, but there is a space in front of the following command.  This is very important because your shell likely keeps a history of your commands.  Type ```history``` to see what I'm talking about.  This is a very useful tool but doesn't work well with cleartext passwords.  So place a space before your command and it will not be recorded in history.  If you forget, simply type ```history``` and find the line you want to remove, then ```history -d <linenumber>``` to remove that line.
 ```
  ./playervsplayercoin-cli encryptwallet <mylongrandompassphrase>
 ```
