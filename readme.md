@@ -25,8 +25,9 @@ Since you probably have the 888 pvpcoin needed to setup and run a masternode, it
 
 A note about encryption: It is ALWAYS a good idea to encrypt a wallet that has funds.  Please be sure to encrypt your wallet and keep the password in (multiple) safe locations.  No password, no access to funds.  And if you have backup copies of your wallet before it was encyrpted, get rid of them!  Someone with access to those unecrypted wallets wouldn't need your passphrase.  You decide how to proceed, this document assumes you have encrypted your control wallet... no need to encrypt your remote wallet (masternode), as it contains no funds.
 
+Note the space in front of the following command.  That is very important because your shell likely keeps a history of your commands.  Type ```history``` to see what I'm talking about.  This is a very useful tool but doesn't work well with cleartext passwords.  So place a space before your command and it will not be recorded in history.  If you forget, simply type ```history``` and figure find the line you want to remove, then ```history -d <linenumber>``` to remove that line.
 ```
-./playervsplayercoin-cli encryptwallet <mylongrandompassphrase>
+ ./playervsplayercoin-cli encryptwallet <mylongrandompassphrase>
 ```
 another note... special characters are allowed in the passphrase, but must be escaped with a backslash (\\).  I recommend you avoid the exlaimation point (!), it is a pain to use on the -cli and I always have issues trying to escape it.  Here's an example using a strong password with escaped characters:
 ```
@@ -51,7 +52,10 @@ This is the address that will hold your 888 pvpcoin.  Give it a name (i.e. MN1).
 
 
 3. Still in the control wallet, send pvpcoin to the address you generated in step 2 (Be 100% sure that you entered the address correctly. Make sure this is exactly 888 pvpcoin; No more, no less.).  STOP! If using the -qt wallet, just use the Send tab like you normally would, no reason to do this from the debug console.  If you are at all uncomfortable with this step on the -cli, use the -qt wallet.  If you are on a system that doesn't have a working -qt (i.e. Pi), then move your wallet to a system that does to complete these steps.  Once the control wallet is setup, simply move it back.
+
+You DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.  And again, note the space in front of the command unlocking your wallet!
 ```
+ ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
 ./playervsplayercoin-cli sendtoaddress <pvpcoinaddress> 888
 ```
  - Be absolutely 100% sure that this is copied correctly. And then check it again. I cannot help you, if you send 888 pvpcoin to an incorrect address.
@@ -215,9 +219,11 @@ check to see if things are ready:
 
 ready? 
 
-2. Back on your control wallet, you encrypted this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode:
+2. Back on your control wallet, you DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.
+
+Again, note the space in front of the command to unlock the wallet.  This keeps your passphrase from being recorded in the shell's history:
 ```
-./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
+ ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
 ./playervsplayercoin-cli startmasternode alias false <mymnalias>
 ```
 where \<mymnalias\> is the name of your masternode alias (without brackets).  In our example above, this was MN1
