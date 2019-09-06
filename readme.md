@@ -59,6 +59,11 @@ You DID encrypt this wallet, didn't you?  Don't forget to escape any special cha
 ./playervsplayercoin-cli sendtoaddress <pvpcoinaddress> 888
 ```
  - Be absolutely 100% sure that this is copied correctly. And then check it again. I cannot help you, if you send 888 pvpcoin to an incorrect address.
+ 
+ Note that transaction id that gets produced.  You'll need it to check your number of confirmations with the following command:
+ ```
+ ./playervsplayercoin-cli gettransactions <reallylongtransactionid>
+ ```
 
 
 4. Time for a beer (or your drink of choice).  You need 777 confirmations and that will take awhile.  Go play outside.
