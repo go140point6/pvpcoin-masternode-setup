@@ -11,7 +11,7 @@ First the basic requirements:
 - A main computer (Your everyday computer or *soon* a Pi) – This will run the control wallet, hold your collateral 888 pvpcoin and can be turned on and off without affecting the masternode.
   - pick a suitable version for your OS
 - Masternode Server (VPS or local – The computer that will be on 24/7)  
-  - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F).  If that link is expired, plesae try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
+  - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F).  If that link is expired, please try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
 - A unique IP address for your VPS / Remote wallet
   - You will get those from your hosting party.
 
@@ -53,7 +53,7 @@ This is the address that will hold your 888 pvpcoin.  Give it a name (i.e. MN1).
 
 3. Still in the control wallet, send pvpcoin to the address you generated in step 2 (Be 100% sure that you entered the address correctly. Make sure this is exactly 888 pvpcoin; No more, no less.).  STOP! If using the -qt wallet, just use the Send tab like you normally would, no reason to do this from the debug console.  If you are at all uncomfortable with this step on the -cli, use the -qt wallet.  If you are on a system that doesn't have a working -qt (i.e. Pi), then move your wallet to a system that does to complete these steps.  Once the control wallet is setup, simply move it back.
 
-You DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.  And again, note the space in front of the command unlocking your wallet!
+You DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to initiate your transaction.  And again, note the space in front of the command unlocking your wallet!
 ```
  ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
 ./playervsplayercoin-cli sendtoaddress <pvpcoinaddress> 888
@@ -129,7 +129,7 @@ Connect to your vps or the local server that will be on 24/7. This is already as
  ```
  cd ~ && mkdir -p ~/src && cd ~/src
  ```
- - From your home directory, download the latest version from the GitHub repository of your choice to get the latest verion copy the link for linux from step 1.  
+ - From your home directory, download the latest version from the GitHub repository of your choice. To get the latest version copy the link for linux from step 1.  
  ** Note this is an example url, always make sure you have the latest version! **
  ```
  wget https://github.com/go140point6/pvpcoin-build/releases/download/v1.0.0/pvpcoin-1.0.0-STATIC-x86_64-linux-gnu.tar.gz
@@ -231,7 +231,8 @@ Again, note the space in front of the command to unlock the wallet.  This keeps 
  ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
 ./playervsplayercoin-cli startmasternode alias false <mymnalias>
 ```
-where \<mymnalias\> is the name of your masternode alias (without brackets).  In our example above, this was MN1
+where \<mymnalias\> is the name of your masternode alias (without brackets).  In our example above, this was MN1.
+
 The following should appear:
 ```
 “overall” : “Successfully started 1 masternodes, failed to start 0, total 1”,
@@ -260,7 +261,7 @@ You should see something like:
 “txhash” : “334545645643534534324238908f36ff4456454dfffff51311”,
 “outputidx” : 0,
 “netaddr” : “31.14.135.27:4568”,
-“addr” : “D6fujc45645645445645R7TiCwexx1LA1”,
+“addr” : “P6fujc45645645445645R7TiCwexx1LA1”,
 “status” : 4,
 “message” : “Masternode successfully started”
 }
