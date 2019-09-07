@@ -1,5 +1,7 @@
 # PvPCoin Masternode Setup Guide
 
+Note: Currently this is in draft form, the process is being tested.  I don't recommend you follow this guide until this message disappears.
+
 ## Introduction
 This guide is for a single masternode, (tested) on an Ubuntu 18.04 64bit server (VPS) running headless (no GUI desktop) and will be controlled from the wallet on your local computer (Control wallet). The wallet on the the VPS will be referred to as the Remote wallet.
 You will need your server details for progressing through this guide.
