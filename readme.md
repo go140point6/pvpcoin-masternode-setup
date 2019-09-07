@@ -12,8 +12,8 @@ First the basic requirements:
 - 888 pvpcoin (it is recommended you have about 950 to conver any transaction costs).  This is in your control wallet.
 - A main computer (Your everyday computer or even a Pi) – This will run the control wallet, hold your collateral 888 pvpcoin and can be turned on and off without affecting the masternode.
   - pick a suitable version for your OS
-- Masternode Server (VPS or local – The computer that will be on 24/7)  
-  - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F).  If that link is expired, please try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
+- Masternode Server (VPS or local – The computer that will be on 24/7... if local, why not make it a Pi?)  
+  - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F), which costs $5/month (a $3.50/month VPS would work too). If that link is expired, please try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
 - A unique IP address for your VPS / Remote wallet
   - You will get those from your hosting party.
 
@@ -134,15 +134,15 @@ Connect to your vps or the local server that will be on 24/7. This is already as
  - From your home directory, download the latest version from the GitHub repository of your choice. To get the latest version copy the link for linux from step 1.  
  ** Note this is an example url, always make sure you have the latest version! **
  ```
- wget https://github.com/go140point6/pvpcoin-build/releases/download/v1.0.0/pvpcoin-1.0.0-STATIC-x86_64-linux-gnu.tar.gz
+ wget https://github.com/go140point6/pvpcoin-build/releases/download/v0.12.3.3/pvpcoin-0.12.3.3-x86_64-linux-gnu.tar.gz
  ```
  - Uncompress and extract:
  ```
- tar zxvf pvpcoin-1.0.0-STATIC-x86_64-linux-gnu.tar.gz -C ~/
+ tar zxvf pvpcoin-0.12.3.3-x86_64-linux-gnu.tar.gz -C ~/
  ```
  - Go to the location it uncompressed to:
  ```
- cd ~/pvpcoin-1.0.0/bin/
+ cd ~/pvpcoin-0.12.3.3/bin/
 ```
  - Note: If this is the first time running the wallet in the VPS, you’ll need to start the wallet up for a few seconds:
  ```
