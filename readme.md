@@ -236,7 +236,7 @@ As this is your first time starting the wallet to let it run, you'll need to dow
 ```
 tail -f ~/.playervsplayercoin/debug.log
 ```
-You'll see lots of stuff flashing by, let it run.  You are looking for it to slow a bit once caught up to the blockchain.  Hit ```ctrl-q``` to exit.
+You'll see lots of stuff flashing by, let it run.  You are looking for it to slow a bit once caught up to the blockchain.  Hit ```ctrl-x``` to exit.
 
 
 3. Still on the remote server (masternode):
