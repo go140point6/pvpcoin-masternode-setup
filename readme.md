@@ -254,7 +254,7 @@ The following similar output should appear:
 ```
 
  
-4. Now, run the following and you should find your ip address in the list... also you should see ```"status": "PRE-ENABLED"```.  You want ```ENALBED``` but you need to restart your contol wallet first and let it sync up again:
+4. Now, run the following and you should find your ip address in the list... also you should see ```"status": "PRE-ENABLED"```.  You want ```ENABLED``` but you need to restart your contol wallet first and let it sync up again:
 ```
  ./playervsplayercoin-cli masternode list
 ```
