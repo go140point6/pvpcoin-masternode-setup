@@ -3,14 +3,17 @@
 Note: Currently this is in draft form, the process is being tested.  I don't recommend you follow this guide until this message disappears.
 
 ## Introduction
-This guide is for a single masternode, (tested) on an Ubuntu 18.04 64bit server (VPS) running headless (no GUI desktop) and will be controlled from the wallet on your local computer (Control wallet). The wallet on the the VPS will be referred to as the Remote wallet.
+This guide is for a single masternode, (tested) on an Ubuntu 18.04 64bit server (VPS) running headless (no GUI desktop) and controlled from the wallet on your local computer (Control wallet). The wallet on the the VPS will be referred to as the Remote wallet.
 You will need your server details for progressing through this guide.
 
-Note: There are many different ways to set up masternodes, but this method is considered cold-staking (remote wallet has zero balance becuase the pledge, in this case 888 pvpcoin, stays on the control wallet) as opposed to hot-staking (remote wallet has the 888 pvpcoin).  Cold-staking a masternode is generally considered more secure.  These instructions may differ from what Ed or others have posted on the PvPCoin discord server but I have tested these instructions and they worked for me.  Any questions, you can call me out on discord (@go140point6#7708).
+Note: There are many different ways to set up masternodes, but this method is considered cold-staking (remote wallet has zero balance because the pledge, in this case 888 pvpcoin, stays on the control wallet) as opposed to hot-staking (remote wallet has the 888 pvpcoin).  Cold-staking a masternode is generally considered more secure.  These instructions may differ from what Ed or others have posted on the PvPCoin discord server but I have tested these instructions and they worked for me.  Any questions, you can call me out on discord (@go140point6#7708).
+
+A note if you find me on Discord:  I will *never* ask for your private keys, passwords or other sensitive information. If someone calling themselves go140point6 does, it isn't me, and you should block them.
 
 First the basic requirements:
-- 888 pvpcoin (it is recommended you have about 950 to conver any transaction costs).  This is in your control wallet.
+- 888 pvpcoin (you need a bit more, there is a small transaction cost obviously).  This is in your control wallet.
 - A main computer (Your everyday computer or even a Pi) – This will run the control wallet, hold your collateral 888 pvpcoin and can be turned on and off without affecting the masternode.
+- For a static build x86_64 linux version of the wallet (-qt, -cli and daemon) or a static Pi build (-cli and daemon only), see my other repo (https://github.com/go140point6/pvpcoin-build/releases). For a Windows version, see the "official" repo (https://github.com/MPAds/PvPCoin/releases).
   - pick a suitable version for your OS
 - Masternode Server (VPS or local – The computer that will be on 24/7... if local, why not make it a Pi?)  
   - I use a VPS at [vultr.com] (https://www.vultr.com/?ref=8246948-4F), which costs $5/month (a $3.50/month VPS would work too). If that link is expired, please try [vultr.com] (https://www.vultr.com/?ref=8246947).  The first link will get you $50 for the first month to test out the service (more than enough to cover a masternode).  Not sure if the second link gives you anything, I was able to use the first link when I first signed up.
