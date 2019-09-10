@@ -304,7 +304,7 @@ You are looking for:
 ```
 It takes some time for your masternode to sync with the other masternodes, so if it says PRE-ENABLED at first, don't panic.  Just wait a few minutes (you have another beer, right?) and run the command again.
 
-Congratulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
+Congradulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
 
 I believe you issue the following command to see that transaction as being unspendable (but not certain about this):
 ```
