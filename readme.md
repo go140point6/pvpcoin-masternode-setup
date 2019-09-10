@@ -208,7 +208,7 @@ Make sure to replace rpcuser and rpcpassword with your own and make them long an
  
 
 ## Start your masternode
-Now you are ready to start things in this order:
+Now you are ready to start things in this order (this assumes your control wallet is running and current with the blockchain, if not, start it and wait for it to sync):
 
 1. On the control wallet, you DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.
 
@@ -229,43 +229,67 @@ The following should appear:
   if you get an error saying that the alias is not found then make sure you typed it correctly by opening the masternode configuration file and checking. If this is correct try restarting your control wallet.
 
 
-2. Back on the VPS (remote wallet - masternode):
- - Start the daemon client in the VPS. First go back to your installed wallet directory:
-```
-cd ~/pvpcoin/bin
-```
-and then start the wallet using 
+2. Back on the remote server (masternode), start the wallet:
 ```
 ./playervsplayercoind
 ```
 
-As this is your first time starting the wallet to let it run, you'll need to download the blockchain, which could take some time.  Go get another beer then check to see if things are ready:
+As this is your first time starting the wallet to let it run, you'll need to download the blockchain, which could take some time.  Use the handy 'tail' command and then go get another beer:
 ```
-./playervsplayercoin-cli getinfo
+tail -f ~/.playervsplayercoin/debug.log
 ```
+You'll see lots of stuff flashing by, let it run.  You are looking for it to slow a bit once caught up to the blockchain.  Hit ```ctrl-q``` to exit.
 
 
-3. Still on the VPS (masternode):
+3. Still on the remote server (masternode):
 ```
 ./playervsplayercoin-cli masternode status
 ```
 The following similar output should appear:
 ```
 {
-  "outpoint": "ce4e12367e248b45120d7beac7693e4582ww36ec6f2fae72087ee281bb5426bd-0",
+  "outpoint": "ce4e14920e248b45120d7aaac7693e4582ee26ec6f2fae72002ee281bb5426bd-1",
   "service": "207.246.108.36:4568",
   "payee": "PRa9qEkTDvbJCYAdeXfxazmt3H827A4hLm",
   "status": "Masternode successfully started"
 }
 ```
 
+ 
+4. Now, run the following and you should find your ip address in the list... also you should see ```"status": "PRE-ENABLED"```.  You want ```ENALBED``` but you need to restart your contol wallet first and let it sync up again:
+```
+ ./playervsplayercoin-cli masternode list
+```
+The following output should appear (truncasted to just my masternode):
+```
+  "ce4e14920e248b45120d7aaac7693e4582ee26ec6f2fae72002ee281bb5426bd-1": {
+    "address": "207.246.108.36:4568",
+    "payee": "PRa9qEkTDvbJCYAdeXfxazmt3H827A4hLm",
+    "status": "PRE-ENABLED",
+    "protocol": 70210,
+    "daemonversion": "0.12.3.3",
+    "sentinelversion": "Unknown",
+    "sentinelstate": "expired",
+    "lastseen": 1568136852,
+    "activeseconds": 674,
+    "lastpaidtime": 0,
+    "lastpaidblock": 0
+```
 
-4.  One more check to ensure you are really working:
+5. Back over on the control wallet, restart and let it sync:
+```
+./playervsplayercoin-cli -stop
+./playervsplayercoind -daemon
+```
+
+
+6. From either control wallet or remote wallet, you can check to see if you masternode is up and running as ```ENALBED```:
 ```
 ./playervsplayercoin-cli masternode list
 ```
-and look for your masternode to say "ENABLED" for status:
+You are looking for:
 ```
+  "ce4e14920e248b45120d7aaac7693e4582ee26ec6f2fae72002ee281bb5426bd-1": {
     "address": "207.246.108.36:4568",
     "payee": "PRa9qEkTDvbJCYAdeXfxazmt3H827A4hLm",
     "status": "ENABLED",
@@ -273,11 +297,12 @@ and look for your masternode to say "ENABLED" for status:
     "daemonversion": "0.12.3.3",
     "sentinelversion": "Unknown",
     "sentinelstate": "expired",
-    "lastseen": 1568133616,
-    "activeseconds": 945,
+    "lastseen": 1568137452,
+    "activeseconds": 1274,
     "lastpaidtime": 0,
     "lastpaidblock": 0
 ```
+It takes some time for your masternode to sync with the other masternodes, so if it says PRE-ENABLED at first, don't panic.  Just wait a few minutes (you have another beer, right?) and run the command again.
 
 Congratulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
 
