@@ -210,68 +210,81 @@ Make sure to replace rpcuser and rpcpassword with your own and make them long an
 ## Start your masternode
 Now you are ready to start things in this order:
 
-1. Remote wallet (masternode):
- - Start the daemon client in the VPS. First go back to your installed wallet directory,
-```
-cd ~/pvpcoin/bin
-```
-and then start the wallet using
-```
-./playervsplayercoind
-```
-
-As this is your first time starting the wallet to let it run, you'll need to download the blockchain, which could take some time.  Go get another beer.
-
-check to see if things are ready:
-```
-./playervsplayercoin-cli getinfo
-```
-
-ready? 
-
-2. Back on your control wallet, you DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.
+1. On the control wallet, you DID encrypt this wallet, didn't you?  Don't forget to escape any special characters (see the top).  The number after the passphrase is the time in seconds that the wallet remains unlocked, you only need it unlocked long enough to start up the masternode.
 
 Again, note the space in front of the command to unlock the wallet.  This keeps your passphrase from being recorded in the shell's history:
 ```
  ./playervsplayercoin-cli walletpassphrase <mylongrandompassphrase> 120
-./playervsplayercoin-cli startmasternode alias false <mymnalias>
+./playervsplayercoin-cli masternode start-alias <mymnalias>
 ```
 where \<mymnalias\> is the name of your masternode alias (without brackets).  In our example above, this was MN1.
 
 The following should appear:
 ```
-“overall” : “Successfully started 1 masternodes, failed to start 0, total 1”,
-“detail” : [
 {
-“alias” : “<mymnalias>”,
-“result” : “successful”,
+  "alias": "MN1",
+  "result": "successful"
 }
 ```
   if you get an error saying that the alias is not found then make sure you typed it correctly by opening the masternode configuration file and checking. If this is correct try restarting your control wallet.
 
-3. Back on the VPS (remote wallet), start the masternode
+
+2. Back on the VPS (remote wallet - masternode):
+ - Start the daemon client in the VPS. First go back to your installed wallet directory:
 ```
-./playervsplayercoin-cli startmasternode local false
+cd ~/pvpcoin/bin
 ```
- - A message “masternode successfully started” should appear, please give it time to complete.
+and then start the wallet using 
+```
+./playervsplayercoind
+```
+
+As this is your first time starting the wallet to let it run, you'll need to download the blockchain, which could take some time.  Go get another beer then check to see if things are ready:
+```
+./playervsplayercoin-cli getinfo
+```
 
 
-4. Use the following command to check status:
+3. Still on the VPS (masternode):
 ```
 ./playervsplayercoin-cli masternode status
 ```
-You should see something like:
+The following similar output should appear:
 ```
 {
-“txhash” : “334545645643534534324238908f36ff4456454dfffff51311”,
-“outputidx” : 0,
-“netaddr” : “31.14.135.27:4568”,
-“addr” : “P6fujc45645645445645R7TiCwexx1LA1”,
-“status” : 4,
-“message” : “Masternode successfully started”
+  "outpoint": "ce4e12367e248b45120d7beac7693e4582ww36ec6f2fae72087ee281bb5426bd-0",
+  "service": "207.246.108.36:4568",
+  "payee": "PRa9qEkTDvbJCYAdeXfxazmt3H827A4hLm",
+  "status": "Masternode successfully started"
 }
 ```
-Congratulations! You have successfully created your masternode!
+
+
+4.  One more check to ensure you are really working:
+```
+./playervsplayercoin-cli masternode list
+```
+and look for your masternode to say "ENABLED" for status:
+```
+    "address": "207.246.108.36:4568",
+    "payee": "PRa9qEkTDvbJCYAdeXfxazmt3H827A4hLm",
+    "status": "ENABLED",
+    "protocol": 70210,
+    "daemonversion": "0.12.3.3",
+    "sentinelversion": "Unknown",
+    "sentinelstate": "expired",
+    "lastseen": 1568133616,
+    "activeseconds": 945,
+    "lastpaidtime": 0,
+    "lastpaidblock": 0
+```
+
+Congratulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
+
+I believe you issue the following command to see that transaction as being unspendable (but not certain about this):
+```
+./playervsplayercoin-cli listlockunspent
+```
 
 
 ## Tearing down a Masternode
