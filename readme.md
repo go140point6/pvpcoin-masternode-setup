@@ -258,7 +258,7 @@ The following similar output should appear:
 ```
  ./playervsplayercoin-cli masternode list
 ```
-The following output should appear (truncasted to just my masternode):
+The following output should appear (truncated to just my masternode):
 ```
   "ce4e14920e248b45120d7aaac7693e4582ee26ec6f2fae72002ee281bb5426bd-1": {
     "address": "207.246.108.36:4568",
@@ -281,7 +281,7 @@ The following output should appear (truncasted to just my masternode):
 ```
 
 
-6. From either control wallet or remote wallet, you can check to see if you masternode is up and running as ```ENALBED```:
+6. From either control wallet or remote wallet, you can check to see if you masternode is up and running as ```ENABLED```:
 ```
 ./playervsplayercoin-cli masternode list
 ```
@@ -302,7 +302,7 @@ You are looking for:
 ```
 It takes some time for your masternode to sync with the other masternodes, so if it says PRE-ENABLED at first, don't panic.  Just wait a few minutes (you have another beer, right?) and run the command again.
 
-Congradulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
+Congratulations! You have successfully created your cold-staking masternode!  Your pvpcoins are safely stored in your control wallet!
 
 I believe you issue the following command to see that transaction as being unspendable (but not certain about this):
 ```
