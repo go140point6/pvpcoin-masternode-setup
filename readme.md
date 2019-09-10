@@ -88,7 +88,7 @@ nano ~/.playervsplayercoin/masternode.conf
 ```
 Add the following line to the configuration file:
 ```
-<Name of Masternode(Use the name you entered earlier for simplicity)> <Unique IP address>:4568 <The result of Step 1> <Result of Step 4> <The number after the long line in Step 4>
+<Name of Masternode(Use the name you entered earlier for simplicity)> <Unique IP address>:4568 <The result of Step 1> <Result of Step 5> <The number after the long line in Step 5>
 ```
 Substitute it with your own values and without the “<>”s  
 ```
