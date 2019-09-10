@@ -1,12 +1,12 @@
 # PvPCoin Masternode Setup Guide
 
-Note: Currently this is in draft form, the process is being tested.  I don't recommend you follow this guide until this message disappears.
-
 ## Introduction
 This guide is for a single masternode, (tested) on an Ubuntu 18.04 64bit server (VPS) running headless (no GUI desktop) and controlled from the wallet on your local computer (Control wallet). The wallet on the the VPS will be referred to as the Remote wallet.
 You will need your server details for progressing through this guide.
 
-Note: There are many different ways to set up masternodes, but this method is considered cold-staking (remote wallet has zero balance because the pledge, in this case 888 pvpcoin, stays on the control wallet) as opposed to hot-staking (remote wallet has the 888 pvpcoin).  Cold-staking a masternode is generally considered more secure.  These instructions may differ from what Ed or others have posted on the PvPCoin discord server but I have tested these instructions and they worked for me.  Any questions, you can call me out on discord (@go140point6#7708).
+Note: There are many different ways to set up masternodes, but this method is considered cold-staking (remote wallet has zero balance because the pledge, in this case 888 pvpcoin, stays on the control wallet) as opposed to hot-staking (remote wallet has the 888 pvpcoin).  Cold-staking a masternode is generally considered more secure. 
+
+Note: Proceed at your own risk! These instructions worked for me as written, but you decide how to proceed. Any questions, you can call me out on discord (@go140point6#7708).
 
 A note if you find me on Discord:  I will *never* ask for your private keys, passwords or other sensitive information. If someone calling themselves go140point6 does, it isn't me, and you should block them.
 
