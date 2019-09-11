@@ -51,7 +51,7 @@ This will be the masternode’s privkey. Save this output, we’ll use this late
 ```
 ./playervsplayercoin-cli getaccountaddress chooseAnyNameForYourMasternode
 ```
-This is the address that will hold your 888 pvpcoin.  Give it a name (i.e. MN1).  I don't recommend you use this wallet for anything else, the 888 pvpcoin will be locked.  Your masternode rewards will be sent to this address as well, but those funds should be avaialble to you once confirmed like any other transaction.
+This is the address that will hold your 888 pvpcoin.  Give it a name (i.e. MN1).  I don't recommend you use this address for anything else, the 888 pvpcoin will be locked.  Your masternode rewards will be sent to this address as well, but those funds should be avaialble to you once confirmed like any other transaction.
 
 
 3. Still in the control wallet, send pvpcoin to the address you generated in step 2 (Be 100% sure that you entered the address correctly. Make sure this is exactly 888 pvpcoin; No more, no less.).  STOP! If using the -qt wallet, just use the Send tab like you normally would, no reason to do this from the debug console.  If you are at all uncomfortable with this step on the -cli, use the -qt wallet.  If you are on a system that doesn't have a working -qt (i.e. Pi), then move your wallet to a system that does to complete these steps.  Once the control wallet is setup, simply move it back.
