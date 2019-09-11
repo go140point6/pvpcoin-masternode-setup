@@ -281,7 +281,7 @@ The following output should appear (truncated to just my masternode):
 ```
 
 
-6. From either control wallet or remote wallet, you can check to see if you masternode is up and running as ```ENABLED```:
+6. From either control wallet or remote wallet, you can check to see if your masternode is up and running as ```ENABLED```:
 ```
 ./playervsplayercoin-cli masternode list
 ```
