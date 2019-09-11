@@ -22,7 +22,7 @@ First the basic requirements:
 
 The basic reasoning for these requirements is that you get to keep your pvpcoin in your local wallet and host your masternode remotely, securely.
 
-I am writing these instuctions using playervsplayercoin-cli, not the -qt (GUI) wallet.  These commands will work in the -qt wallet if you want, just go to the debug console (Tools > Debug console) and type them in just as if you were at the command line.  Once I have a minute, I'm going to try to compile a Pi version of the daemon and -cli wallet so that becomes my control wallet.  I completed these steps on Lubuntu 19.04 using the -cli wallet.
+I am writing these instuctions using playervsplayercoin-cli, not the -qt (GUI) wallet.  These commands will work in the -qt wallet if you want, just go to the debug console (Tools > Debug console) and type them in just as if you were at the command line.  I completed these steps on Lubuntu 19.04 using the -cli wallet.
 
 Since you probably have the 888 pvpcoin needed to setup and run a masternode, it is assumed you already have a running control wallet on either Linux or Windows.  Remember, if you have a running -qt, just use these commands in the Debug console, except where noted.
 
