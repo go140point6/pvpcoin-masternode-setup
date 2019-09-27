@@ -188,6 +188,14 @@ addnode=22.137.226.5:4568
 addnode=136.144.171.201:4568
 addnode=155.138.162.120:4568
 addnode=207.246.108.36:4568
+addnode=3.215.162.101:4568
+addnode=3.230.179.87:4568
+addnode=50.245.85.76:4568
+addnode=149.28.160.187:4568
+addnode=50.245.85.73:4568
+addnode=50.245.85.74:4568
+addnode=50.245.85.77:4568
+addnode=207.154.242.254:4568
 ```
 Make sure to replace rpcuser and rpcpassword with your own and make them long and random.  You will never need to actually use this username/password combination.  Also be sure to replace <your unique public ip address> with your VPS ip address and use your generated masternode private key.
 
